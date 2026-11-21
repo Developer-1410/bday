@@ -1,122 +1,181 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Music2,
+  Sparkles,
+  Heart,
+  Gift,
+  Star,
+  ChevronRight,
+  Cake,
+  PartyPopper,
+} from "lucide-react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [started, setStarted] = useState(false);
+
+  
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+    <main className="birthday-page">
+
+      {/* Background Decorations */}
+      <div className="background-glow glow-one" />
+      <div className="background-glow glow-two" />
+
+      {Array.from({ length: 18 }).map((_, index) => (
+        <motion.div
+          key={index}
+          className="floating-heart"
+          initial={{
+            y: "110vh",
+            x: `${(index * 17) % 100}vw`,
+            opacity: 0,
+          }}
+          animate={{
+            y: "-15vh",
+            opacity: [0, 0.7, 0],
+            rotate: [0, 25, -25, 0],
+          }}
+          transition={{
+            duration: 12 + (index % 7) * 2,
+            repeat: Infinity,
+            delay: index * 0.8,
+            ease: "linear",
+          }}
         >
-          Count is {count}
-        </button>
-      </section>
+          {index % 2 === 0 ? "♡" : "✦"}
+        </motion.div>
+      ))}
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+      {/* Top Bar */}
+      <header className="top-bar">
+        <div className="brand">
+          <Heart size={19} fill="currentColor" />
+          <span>A Little Surprise</span>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <div className="music-status">
+          <Music2 size={18} />
+          <span>Music coming soon</span>
+        </div>
+      </header>
+
+      {/* Main Birthday Content */}
+      <section className="hero-section">
+
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+
+          <div className="top-decoration">
+            <Sparkles size={20} />
+            <span>TODAY IS YOUR SPECIAL DAY</span>
+            <Sparkles size={20} />
+          </div>
+
+          <motion.div
+            className="birthday-heading"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 1 }}
+          >
+            <p className="small-heading">A Special Birthday Surprise</p>
+
+            <h1>
+              For My
+              <span>Dear Sister</span>
+            </h1>
+
+            <p className="heading-subtitle">
+              Today is filled with smiles, surprises and lots of love!
+            </p>
+          </motion.div>
+
+          {/* Birthday Illustration */}
+            <div className="birthday-illustration">
+            <div className="illustration-sparkle sparkle-one">✦</div>
+            <div className="illustration-sparkle sparkle-two">♡</div>
+            <div className="illustration-sparkle sparkle-three">✧</div>
+
+            <div className="teddy">🧸</div>
+
+            <div className="gift gift-left">🎁</div>
+            <div className="gift gift-right">🎀</div>
+
+            <div className="cake-decoration">🎂</div>
+
+            <div className="illustration-caption">
+              Made with lots of love ♡
+            </div>
+          </div>
+
+          {/* Welcome Message */}
+          <motion.div
+            className="welcome-card"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+            <Heart size={18} fill="currentColor" />
+
+            <p>
+              Someone very special deserves something extraordinary.
+              Get ready for a little surprise!
+            </p>
+          </motion.div>
+
+          {/* Birthday Date Message */}
+<motion.div
+  className="birthday-date-card"
+  initial={{ opacity: 0, y: 15 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.8 }}
+>
+  <Sparkles size={18} />
+  <span>Today is all about YOU!</span>
+  <Heart size={18} fill="currentColor" />
+</motion.div>
+
+          {/* Start Button */}
+          <motion.button
+            className="start-button"
+            onClick={() => setStarted(true)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.94 }}
+          >
+            <Gift size={21} />
+            Let's Begin
+            <ChevronRight size={21} />
+          </motion.button>
+
+          <AnimatePresence>
+            {started && (
+              <motion.div
+                className="coming-soon"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <PartyPopper size={22} />
+                Your surprise journey is getting ready! 💗
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <p className="bottom-note">
+            Made with ♡ especially for you
+          </p>
+
+        </motion.div>
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;
