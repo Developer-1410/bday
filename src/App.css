@@ -554,11 +554,18 @@ animation: synchronized-float 3s ease-in-out infinite;
     transparent 360deg
   );
 
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  /* Standard mask property */
+mask:
+  linear-gradient(#fff 0 0) content-box,
+  linear-gradient(#fff 0 0);
+
+/* Browser compatibility */
+-webkit-mask:
+  linear-gradient(#fff 0 0) content-box,
+  linear-gradient(#fff 0 0);
+
+-webkit-mask-composite: xor;
+mask-composite: exclude;
 
   animation: neon-rotate 3s linear infinite;
   pointer-events: none;
