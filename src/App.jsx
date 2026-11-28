@@ -8,6 +8,7 @@ import MysteryGift from "./pages/MystryGift";
 import FunnyMemories from "./pages/FunnyMemories";
 import SisterQuiz from "./pages/SisterQuiz";
 import SisterAwards from "./pages/SisterAwards";
+import SpecialLetter from "./pages/SpecialLetter";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/funny-memories" element={<FunnyMemories/>}/>
         <Route path="/sister-quiz" element={<SisterQuiz/>}/>
         <Route path="/sister-awards" element={<SisterAwards/>}/>
+        <Route path="/special-letter" element={<SpecialLetter/>}/>
       </Routes>
     </BrowserRouter>
   );
