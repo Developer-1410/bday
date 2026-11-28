@@ -1,0 +1,311 @@
+
+/* Main Page */
+
+.mystery-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 80px 20px 45px;
+  color: #64274f;
+
+  background:
+    radial-gradient(circle at 15% 15%, #ffe1ed, transparent 35%),
+    radial-gradient(circle at 85% 35%, #e8d9ff, transparent 35%),
+    linear-gradient(135deg, #fff5f8, #fce5f0, #f3e8ff);
+}
+
+/* Decorations */
+
+.mystery-decoration {
+  position: absolute;
+  pointer-events: none;
+  color: #e87aab;
+  animation: mystery-float 4s ease-in-out infinite;
+}
+
+.mystery-heart-one {
+  top: 17%;
+  left: 12%;
+  font-size: 42px;
+}
+
+.mystery-heart-two {
+  bottom: 18%;
+  right: 13%;
+  font-size: 32px;
+  animation-delay: 1s;
+}
+
+.mystery-star-one {
+  top: 20%;
+  right: 15%;
+  font-size: 38px;
+  animation-delay: 1.5s;
+}
+
+.mystery-star-two {
+  bottom: 20%;
+  left: 15%;
+  font-size: 45px;
+  animation-delay: 2s;
+}
+
+@keyframes mystery-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Main Container */
+
+.mystery-container {
+  width: 100%;
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* Eyebrow */
+
+.mystery-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: #c15d97;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+/* Heading */
+
+.mystery-heading {
+  margin-top: 20px;
+
+  color: #803b6b;
+  font-size: clamp(40px, 8vw, 60px);
+  line-height: 1.2;
+}
+
+.mystery-heading span {
+  display: block;
+
+  color: #df599a;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(65px, 12vw, 88px);
+  font-weight: 400;
+}
+
+/* Subtitle */
+
+.mystery-subtitle {
+  margin-top: 15px;
+  color: #946b88;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Gift Area */
+
+.mystery-gift-area {
+  min-height: 260px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 15px;
+}
+
+.mystery-gift-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  padding: 25px 45px;
+
+  border: 1px solid #f5b8d5;
+  border-radius: 30px;
+
+  background: #ffffffc9;
+  color: #df599a;
+
+  box-shadow: 0 15px 40px #c76d9b20;
+
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mystery-gift-button svg {
+  filter: drop-shadow(0 8px 10px #df599a30);
+}
+
+/* Hint */
+
+.mystery-hint {
+  margin-top: 10px;
+  color: #bd6697;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Reveal Card */
+
+.mystery-reveal-card {
+  width: 100%;
+  max-width: 460px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 30px;
+  padding: 30px 28px;
+
+  border: 1px solid #f4bdd8;
+  border-radius: 28px;
+
+  background: #ffffffd9;
+  box-shadow: 0 15px 45px #c76d9b20;
+}
+
+.mystery-reveal-icon {
+  font-size: 65px;
+  margin-bottom: 12px;
+}
+
+.mystery-reveal-card h2 {
+  color: #d65a9e;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.mystery-reveal-card p {
+  color: #87536f;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.mystery-love {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 22px;
+
+  color: #c15d97;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Continue Button */
+
+.mystery-continue-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 25px;
+  padding: 14px 28px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: linear-gradient(110deg, #f16ca8, #d65a9e);
+  color: white;
+
+  box-shadow: 0 9px 25px #d85b9d45;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 500px) {
+  .mystery-page {
+    padding: 75px 18px 35px;
+  }
+
+  .mystery-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .mystery-subtitle {
+    font-size: 12px;
+  }
+
+  .mystery-gift-area {
+    min-height: 230px;
+  }
+
+  .mystery-gift-button {
+    padding: 22px 35px;
+  }
+
+  .mystery-gift-button svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  .mystery-reveal-card {
+    padding: 25px 20px;
+  }
+
+  .mystery-reveal-card h2 {
+    font-size: 22px;
+  }
+
+  .mystery-reveal-card p {
+    font-size: 12px;
+  }
+
+  .mystery-heart-one {
+    left: 5%;
+  }
+
+  .mystery-heart-two {
+    right: 5%;
+  }
+
+  .mystery-star-one {
+    right: 5%;
+  }
+
+  .mystery-star-two {
+    left: 5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mystery-decoration {
+    animation: none;
+  }
+}
