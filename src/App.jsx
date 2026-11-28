@@ -6,6 +6,7 @@ import SecretPin from "./pages/SecretPin";
 import AreYouSure from "./pages/AreYouSure";
 import MysteryGift from "./pages/MystryGift";
 import FunnyMemories from "./pages/FunnyMemories";
+import SisterQuiz from "./pages/SisterQuiz";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/are-you-sure" element={<AreYouSure />} />
         <Route path="/mystery-gift" element={<MysteryGift />} />
         <Route path="/funny-memories" element={<FunnyMemories/>}/>
+        <Route path="/sister-quiz" element={<SisterQuiz/>}/>
       </Routes>
     </BrowserRouter>
   );
