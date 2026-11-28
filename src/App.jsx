@@ -10,6 +10,7 @@ import SisterQuiz from "./pages/SisterQuiz";
 import SisterAwards from "./pages/SisterAwards";
 import SpecialLetter from "./pages/SpecialLetter";
 import BirthdayWishes from "./pages/BirthdayWishes";
+import SurpriseGallery from "./pages/SurpriseGallery";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/sister-awards" element={<SisterAwards/>}/>
         <Route path="/special-letter" element={<SpecialLetter/>}/>
         <Route path="/birthday-wishes" element={<BirthdayWishes/>}/>
+        <Route path="/surprise-gallery" element={<SurpriseGallery/>}/>
       </Routes>
     </BrowserRouter>
   );
